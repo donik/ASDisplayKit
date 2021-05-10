@@ -39,50 +39,50 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'PINRemoteImage' do |pin|
-    pin.dependency 'PINRemoteImage/iOS', '= 3.0.0-beta.14'
+    pin.dependency 'PINRemoteImage/iOS', '= 3.0.3'
     pin.dependency 'PINRemoteImage/PINCache'
-    pin.dependency 'Texture/Core'
+    pin.dependency 'AsyncDisplayKit/Core'
   end
 
   spec.subspec 'IGListKit' do |igl|
-    igl.dependency 'IGListKit', '~> 3.0'
-    igl.dependency 'Texture/Core'
+    igl.dependency 'IGListKit', '~> 4.0.0'
+    igl.dependency 'AsyncDisplayKit/Core'
   end
 
   spec.subspec 'Yoga' do |yoga|
     yoga.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) YOGA=1' }
-    yoga.dependency 'Yoga', '1.6.0'
-    yoga.dependency 'Texture/Core'
+    yoga.dependency 'Yoga', '1.14.0'
+    yoga.dependency 'AsyncDisplayKit/Core'
   end
   
   # If flag is enabled the old TextNode with all dependencies will be compiled out
   spec.subspec 'TextNode2' do |text_node|
     text_node.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) AS_ENABLE_TEXTNODE=0' }
-    text_node.dependency 'Texture/Core'
+    text_node.dependency 'AsyncDisplayKit/Core'
   end
 
   spec.subspec 'Video' do |video|
     video.frameworks = ['AVFoundation', 'CoreMedia']
     video.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) AS_USE_VIDEO=1' }
-    video.dependency 'Texture/Core'
+    video.dependency 'AsyncDisplayKit/Core'
   end 
 
   spec.subspec 'MapKit' do |map|
     map.frameworks = ['CoreLocation', 'MapKit']
     map.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) AS_USE_MAPKIT=1' }
-    map.dependency 'Texture/Core'
+    map.dependency 'AsyncDisplayKit/Core'
   end
 
   spec.subspec 'Photos' do |photos|
     photos.frameworks = 'Photos'
     photos.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) AS_USE_PHOTOS=1' }
-    photos.dependency 'Texture/Core'
+    photos.dependency 'AsyncDisplayKit/Core'
   end
 
   spec.subspec 'AssetsLibrary' do |assetslib|
     assetslib.frameworks = 'AssetsLibrary'
     assetslib.xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) AS_USE_ASSETS_LIBRARY=1' }
-    assetslib.dependency 'Texture/Core'
+    assetslib.dependency 'AsyncDisplayKit/Core'
   end
 
   # Include these by default for backwards compatibility.
