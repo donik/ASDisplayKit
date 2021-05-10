@@ -62,7 +62,7 @@
  */
 - (CGSize)measure:(CGSize)constrainedSize/* ASDISPLAYNODE_DEPRECATED_MSG("Use layoutThatFits: with a constrained size of (CGSizeZero, constrainedSize) and call size on the returned ASLayout.")*/;
 
-ASLayoutElementStyleForwardingDeclaration
+//ASLayoutElementStyleForwardingDeclaration
 
 /**
  * @abstract Called whenever the visiblity of the node changed.
