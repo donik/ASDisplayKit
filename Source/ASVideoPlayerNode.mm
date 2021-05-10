@@ -277,14 +277,14 @@ static void *ASVideoPlayerNodeContext = &ASVideoPlayerNodeContext;
 
     if (_delegateFlags.delegateCustomControls && _delegateFlags.delegateLayoutSpecForControls) {
       NSDictionary *customControls = [_delegate videoPlayerNodeCustomControls:self];
-      std::vector<ASDisplayNode *> subnodes;
+      NSMutableArray *subnodes = [[NSMutableArray alloc] init];
       for (id key in customControls) {
         id node = customControls[key];
         if (![node isKindOfClass:[ASDisplayNode class]]) {
           continue;
         }
 
-        subnodes.push_back(node);
+        [subnodes addObject:node];
         [_cachedControls setObject:node forKey:key];
       }
       
